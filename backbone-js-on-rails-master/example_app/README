@@ -1,0 +1,41 @@
+Backbone.js on Rails Example app
+================================
+
+It's a Rails 3.2 app.
+
+Running the app
+---------------
+
+Make sure you're running Ruby 1.9 (there's a .ruby-version file that should be
+read by rvm or rbenv) and then:
+
+    bundle
+    bundle exec rake db:create db:migrate
+    bundle exec rails server
+
+Open on http://localhost:3000
+
+Running the tests
+-----------------
+
+The first time, create the test database:
+
+    bundle exec rake db:test:prepare
+
+There are three sets of tests: Cucumber integration tests, RSpec isolation
+specs for Rails components, and Jasmine isolation specs for Backbone
+components.
+
+Run them all at once:
+
+    bundle exec rake
+
+Or one at a time
+
+    bundle exec rake cucumber
+    bundle exec rake spec
+    bundle exec rake jasmine:ci
+
+To interactively run the Jasmine specs several times (for example, while
+developing), run `bundle exec rake jasmine` and visit http://localhost:8888 to
+view the suite.
